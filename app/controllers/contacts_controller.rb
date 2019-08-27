@@ -31,16 +31,6 @@ class ContactsController < ApplicationController
     else
       render :new
     end
-
-    respond_to do |format|
-      if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
-        format.json { render :show, status: :created, location: @contact }
-      else
-        format.html { render :new }
-        format.json { render json: @contact.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /contacts/1
